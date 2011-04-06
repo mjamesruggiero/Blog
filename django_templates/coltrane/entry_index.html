@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Entries index</title>
+    </head>
+    <body>
+        <h1>Entries index</h1>
+        {% for entry in entry_list %}
+            <h2>{{ entry.title }}</h2>
+            {{ entry.body_html }}
+            <p class="about-this">Published on {{ entry.pub_date|date:"F j, Y" }}</p>
+            <p><a href="{{ entry.get_absolute_url }}">Permalink</a></p>
+        {% endfor %}
+    </body>
+</html>

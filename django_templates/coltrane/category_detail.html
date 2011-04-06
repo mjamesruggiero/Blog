@@ -1,0 +1,16 @@
+{% extends "base_categories.html" %}
+
+{% block title %}{{ block.super }} | {{ category }}{% endblock %}
+
+{% block content %}
+    <h2>{{ category }}</h2>
+    {% if object_list.count %}
+        <ul>
+        {% for entry in object_list %}
+            <li><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no entries for that category.</p>
+    {% endif %}
+{% endblock %}

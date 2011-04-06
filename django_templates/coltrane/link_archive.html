@@ -1,0 +1,17 @@
+{% extends "base_links.html" %}
+
+{% block title %}{{ block.super }} | Links{% endblock %}
+
+{% block content %}
+{% for link in latest %}
+    <p><a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
+       {% if link.via_url and link.via_name  %}
+        (via <a href="{{ link.via_url }}">{{ link.via_name }}</a>)
+       {% endif %}
+    </p>
+{% endfor %}
+{% endblock %}
+
+{% block whatis %}
+    <p>This is a list of {{ object_list.count }} published links.</p>
+{% endblock %}

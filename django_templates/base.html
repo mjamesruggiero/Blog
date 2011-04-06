@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <title>mjamesruggiero {% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="http://www.mjamesruggiero.com/media/css/grid.css" type="text/css" media="all" /> 
+    </head>
+    <!-- <body class="{% block bodyclass %}{% endblock %}"> -->
+    <body>
+        <div id="container" class="container_12">
+            <div id="header" class="prefix_1">
+                <a class="img-border" href="/" alt="mjamesruggiero">
+                    <img src="http://www.mjamesruggiero.com/media/images/bodoni_logo.png" alt="mjamesruggiero" />
+                </a>
+            </div>
+            <div class="grid_8 alpha" id="leftcol"> 
+                <!-- these are pretty pictures -->
+                <div class="grid_8 alpha" id="picturebox">
+                    <div id="image-with-shadow" class="img-shadow">
+                       <img src="http://www.mjamesruggiero.com/media/images/xmas_light.jpg" alt="Xmas"/>
+                    </div>
+                    <div id="image-with-shadow" class="img-shadow">
+                       <img src="http://www.mjamesruggiero.com/media/images/candy.jpg" alt="Candy"/>
+                    </div>
+                    <div id="image-with-shadow" class="img-shadow">
+                       <img src="http://www.mjamesruggiero.com/media/images/evening.jpg" alt="Evening"/>
+                    </div>
+                    <div id="image-with-shadow" class="img-shadow">
+                       <img src="http://www.mjamesruggiero.com/media/images/oranges.jpg" alt="Oranges"/>
+                    </div>
+                    <div id="image-with-shadow" class="img-shadow">
+                       <img src="http://www.mjamesruggiero.com/media/images/sippy.jpg" alt="Sippy"/>
+                    </div>
+                    <div id="image-with-shadow" class="img-shadow">
+                       <img src="http://www.mjamesruggiero.com/media/images/tulips.jpg" alt="Tulips"/>
+                    </div>
+                </div>
+                {% block content %}
+                {% endblock %}
+            </div>
+            <div class="grid_4 omega" id="right_col">
+                <div id="navbars" class="colbox">
+                    <ul id="main-nav-entries">
+                        <li id="main-nav-entries">
+                            <a href="{% url coltrane_entry_archive_index %}">Entries</a>
+                        </li>
+                        <li id="main-nav-links">
+                            <a href="{% url coltrane_link_archive_index %}">Links</a>
+                        </li>
+                        <li id="main-nav-categories">
+                            <a href="{% url coltrane_category_list %}">Categories</a>
+                        </li>
+                        <li id="main-nav-tags">
+                            <a href="{% url coltrane_tag_list %}">Tags</a>
+                        </li>
+                    </ul>
+                </div>
+                <h2>Recent entries</h2>
+                {% block whatis %}
+                {% endblock %}
+                {% load coltrane_tags %}
+                <div id="entries" class="colbox">
+                    <ul>
+                        {% get_latest_content coltrane.entry 5 as latest_entries %} 
+                        {% for entry in latest_entries %}
+                           <li>
+                               <a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a>, posted {{ entry.pub_date|timesince }} ago
+                           </li> 
+                        {% endfor %}
+                    </ul> 
+                    </div>
+                <h2>Recent links</h2>
+                <div id="links" class="colbox">
+                    <ul>
+                        {% get_latest_content coltrane.link 5 as latest_links %} 
+                        {% for link in latest_links %}
+                           <li>
+                               <a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
+                               {% if link.via_url and link.via_name  %}
+                                (via <a href="{{ link.via_url }}">{{ link.via_name }}</a>)
+                               {% endif %}
+                           </li> 
+                        {% endfor %}
+                    </ul> 
+                </div>
+                <h2>LastFM profile</h2>
+                <div id="lastfm_box" class="colbox">
+                    <a href="http://www.last.fm/user/mjamesruggiero/?chartstyle=basicrt10">
+                        <img src="http://imagegen.last.fm/basicrt10/recenttracks/mjamesruggiero.gif" border="0" alt="mjamesruggiero's Profile Page" />
+                    </a>
+                </div>
+                <div id="pony" class="colbox">
+                    <a href="http://www.djangoproject.com/"><img src="http://media.djangoproject.com/img/badges/djangomade124x25_grey.gif" border="0" alt="Made with Django." title="Made with Django." /></a>
+                </div>
+           </div>
+        </div>
+    </body>
+</html>

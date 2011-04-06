@@ -1,0 +1,25 @@
+{% extends "base_links.html" %}
+{% block title %}{{ block.super }} | {{ object.title }}{% endblock %}
+
+{% block content %}
+<h2>{{ object.title }}</h2>
+{{ object.description_html }}
+<p><a href="{{ object.url }}">{{ object.title }}</a></p>
+{% endblock %}
+
+{% block whatis %}
+<p>This is a link posted on {{ object.pub_date|date:"F j, Y" }}</p>
+
+{% if object.tags.count %}
+    <p>This link is tagged with 
+    {% for tag in object.tags %}
+        <a href="{{ tag.get_absolute_url }}">{{ tag.title }}</a> 
+        {% if forloop.last %}{% else %}
+        {% ifequal forloop.revcount0 1%}and {% else %},{% endifequal %}
+        {% endif %}
+    {% endfor %}
+    </p>
+    {% else %}
+    <p>This link doesn't have any tags.</p>
+{% endif %}
+{% endblock %}

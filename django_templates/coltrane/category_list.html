@@ -1,0 +1,9 @@
+{% extends "base_categories.html" %}
+
+{% block title %}{{ block.super }} | Categories{% endblock %}
+
+{% block content %}
+{% for category in object_list %}
+    <p><a href="{{ category.slug }}">{{ category.title }}</a></p>
+{% endfor %}
+{% endblock %}
