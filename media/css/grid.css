@@ -23,7 +23,7 @@ a[href$=png] {
     border-bottom: none;
 }
 a:link, a:visited   {
-    border-bottom: 1px dotted #1e4f6a;
+    /* border-bottom: 1px dotted #1e4f6a; */
     color: #1e4f6a;
     text-decoration: none;
 }
