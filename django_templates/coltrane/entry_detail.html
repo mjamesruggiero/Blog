@@ -8,9 +8,9 @@
 {% endblock %}
 
 {% block whatis %}
-<p>This is an entry posted {{ object.pub_date|date:"F j, Y" }}</p>
+<p>Posted {{ object.pub_date|date:"F j, Y" }}</p>
 {% if object.categories.count %}
-<p>This entry is part of the categor{{ object.categories.count|pluralize:"y,ies" }}
+<p>Categor{{ object.categories.count|pluralize:"y,ies" }}:
 {% for category in object.categories.all %}
     <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
     {% if forloop.last %}{% else %}
