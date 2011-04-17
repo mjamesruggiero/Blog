@@ -37,7 +37,7 @@ a:hover, a:active   {
 }
 #header {
     /* background-color: #93A189; */
-    background-image: url(http://www.mjamesruggiero.com/media/images/green_graded_header.png);
+    /* background-image: url(http://www.mjamesruggiero.com/media/images/green_graded_header.png); */
     background-repeat: repeat-x;
     color: #fff;
     /* height: 100px; */
@@ -65,6 +65,9 @@ a:hover, a:active   {
 .colbox {
     padding: 5px 1px ;
     background: #FFFAFA;
+}
+#right_col h2  {
+    padding: 5px 15px ;
 }
 #pony a  {
     margin: 0px auto;

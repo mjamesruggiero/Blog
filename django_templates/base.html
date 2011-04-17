@@ -9,7 +9,7 @@
     <body>
         <div id="container" class="container_12">
             <div id="header" class="prefix_1">
-                <a class="img-border" href="/" alt="mjamesruggiero">
+                <a class="img-border" href="/" title="mjamesruggiero.com">
                     <img src="http://www.mjamesruggiero.com/media/images/bodoni_logo.png" alt="mjamesruggiero" />
                 </a>
             </div>
@@ -55,7 +55,7 @@
                         </li>
                     </ul>
                 </div>
-                <h2>Recent entries</h2>
+                <h2>Recent</h2>
                 {% block whatis %}
                 {% endblock %}
                 {% load coltrane_tags %}
@@ -64,12 +64,13 @@
                         {% get_latest_content coltrane.entry 5 as latest_entries %} 
                         {% for entry in latest_entries %}
                            <li>
-                               <a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a>, posted {{ entry.pub_date|timesince }} ago
+                               <a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a><br />
+                                posted {{ entry.pub_date|timesince }} ago
                            </li> 
                         {% endfor %}
                     </ul> 
                     </div>
-                <h2>Recent links</h2>
+                <h2>Links</h2>
                 <div id="links" class="colbox">
                     <ul>
                         {% get_latest_content coltrane.link 5 as latest_links %} 
@@ -83,7 +84,7 @@
                         {% endfor %}
                     </ul> 
                 </div>
-                <h2>LastFM profile</h2>
+                <h2>LastFM</h2>
                 <div id="lastfm_box" class="colbox">
                     <a href="http://www.last.fm/user/mjamesruggiero/?chartstyle=basicrt10">
                         <img src="http://imagegen.last.fm/basicrt10/recenttracks/mjamesruggiero.gif" border="0" alt="mjamesruggiero's Profile Page" />
