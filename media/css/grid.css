@@ -98,6 +98,31 @@ li  {
     color: black;
     list-style-type: circle;
 }
+/* here are the delicious links ---------------------- */
+.delicious-posts a { 
+    /** text-decoration: none; **/
+    color: #2A423C; 
+    /** display: block; **/
+    /** padding: 0.3em **/
+}
+.delicious-post { 
+    padding:5px 5px;
+}
+.delicious-posts ul, .delicious-posts li { list-style: none; }
+/**
+.delicious-posts a:hover { text-decoration: underline }
+.delicious-posts ul, .delicious-posts li, .delicious-banner { margin: 0; padding: 0}
+.delicious-posts { 
+    margin: 1em; 
+    border: 2px solid #ddd; 
+    padding: 0.5em; 
+    width: 20em; 
+    font-family: sans-serif; 
+}
+.delicious-odd { background-color: #f8f8f8 }
+.delicious-banner a { font-size: 80% }
+.delicious-post a { color: #04a1ff } 
+**/
 /*
 	Variable Grid System.
 	Learn more ~ http://www.spry-soft.com/grids/

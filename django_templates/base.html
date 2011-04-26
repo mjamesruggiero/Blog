@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
         <title>mjamesruggiero {% block title %}{% endblock %}</title>
-        <link rel="stylesheet" href="http://www.mjamesruggiero.com/media/css/grid.css" type="text/css" media="all" /> 
+        <link rel="stylesheet" href="http://127.0.0.1:3030/media/css/grid.css" type="text/css" media="all" /> 
     </head>
     <!-- <body class="{% block bodyclass %}{% endblock %}"> -->
     <body>
@@ -72,17 +72,40 @@
                     </div>
                 <h2>Links</h2>
                 <div id="links" class="colbox">
-                    <ul>
-                        {% get_latest_content coltrane.link 5 as latest_links %} 
-                        {% for link in latest_links %}
-                           <li>
-                               <a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
-                               {% if link.via_url and link.via_name  %}
-                                (via <a href="{{ link.via_url }}">{{ link.via_name }}</a>)
-                               {% endif %}
-                           </li> 
-                        {% endfor %}
-                    </ul> 
+                <script type="text/javascript" src="http://feeds.delicious.com/v2/js/mjamesruggiero?title=&count=8&sort=date&tags"></script>
+                </div>
+                <div id="twitter_box" class="colbox">
+                    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+                    <script>
+                    new TWTR.Widget({
+                      version: 2,
+                      type: 'profile',
+                      rpp: 4,
+                      interval: 6000,
+                      width: 298,
+                      height: 300,
+                      theme: {
+                        shell: {
+                          background: '#283d38',
+                          color: '#f7edf7'
+                        },
+                        tweets: {
+                          background: '#ffffff',
+                          color: '#a39ea3',
+                          links: '#4aed05'
+                        }
+                      },
+                      features: {
+                        scrollbar: false,
+                        loop: false,
+                        live: false,
+                        hashtags: true,
+                        timestamp: true,
+                        avatars: false,
+                        behavior: 'all'
+                      }
+                    }).render().setUser('mjamesruggiero').start();
+                    </script>
                 </div>
                 <h2>LastFM</h2>
                 <div id="lastfm_box" class="colbox">
