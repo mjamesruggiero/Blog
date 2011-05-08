@@ -10,9 +10,9 @@ current_site = Site.objects.get_current()
 class LatestEntriesFeed(Feed):
     """My custom RSS feed"""
     author_name = "Michael Ruggiero"
-    copyright = "http://%s/about/copywright/" % current_site.domain
+    copyright = "http://%s/" % current_site.domain
     feed_type = Atom1Feed
-    item_copyright = "http://%s/about/copywright/" % current_site.domain
+    item_copyright = "http://%s/" % current_site.domain
     item_author_name = "Michael Ruggiero"
     item_author_link = "http://%s/" % current_site.domain
 
