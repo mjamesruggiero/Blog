@@ -72,8 +72,21 @@ a:hover, a:active   {
 #pony a  {
     margin: 0px auto;
 }
+
+/*--- these are the entries ------------------------*/
+h3.entry-head {
+  color: #2A423C;
+  font-size: 22px;
+  padding: 5px 5px ;
+  margin: 10;
+}
 .about-this {
-    font-variant: small-caps;
+  padding: 5px 5px ;
+  color: #2A423C;  
+  background-color: #93A189;
+  color: #FFFAFA;
+  font-weight: bold;
+  font-variant: small-caps;
 }
 /*--- these are the picture boxes ------------------------*/
 .img-shadow {

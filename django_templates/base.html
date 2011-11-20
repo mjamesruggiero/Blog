@@ -4,58 +4,43 @@
     <link rel="alternate" type="application/rss+xml" title="mjamesruggiero.com feed" href="http://www.mjamesruggiero.com/feeds/entries/" />
     <head>
         <title>mjamesruggiero {% block title %}{% endblock %}</title>
-        <link rel="stylesheet" href="http://www.mjamesruggiero.com/media/css/grid.css" type="text/css" media="all" /> 
+        <link rel="stylesheet" href="{{ MEDIA_URL }}/css/grid.css" type="text/css" media="all" /> 
     </head>
     <!-- <body class="{% block bodyclass %}{% endblock %}"> -->
     <body>
         <div id="container" class="container_12">
             <div id="header" class="prefix_1">
                 <a class="img-border" href="/" title="mjamesruggiero.com">
-                    <img src="http://www.mjamesruggiero.com/media/images/bodoni_logo.png" alt="mjamesruggiero" />
+                    <img src="{{ MEDIA_URL }}/images/bodoni_logo.png" alt="mjamesruggiero" />
                 </a>
             </div>
             <div class="grid_8 alpha" id="leftcol"> 
                 <!-- these are pretty pictures -->
                 <div class="grid_8 alpha" id="picturebox">
                     <div id="image-with-shadow" class="img-shadow">
-                       <img src="http://www.mjamesruggiero.com/media/images/xmas_light.jpg" alt="Xmas"/>
+                       <img src="{{ MEDIA_URL }}/images/xmas_light.jpg" alt="Xmas"/>
                     </div>
                     <div id="image-with-shadow" class="img-shadow">
-                       <img src="http://www.mjamesruggiero.com/media/images/candy.jpg" alt="Candy"/>
+                       <img src="{{ MEDIA_URL }}/images/candy.jpg" alt="Candy"/>
                     </div>
                     <div id="image-with-shadow" class="img-shadow">
-                       <img src="http://www.mjamesruggiero.com/media/images/evening.jpg" alt="Evening"/>
+                       <img src="{{ MEDIA_URL }}/images/evening.jpg" alt="Evening"/>
                     </div>
                     <div id="image-with-shadow" class="img-shadow">
-                       <img src="http://www.mjamesruggiero.com/media/images/oranges.jpg" alt="Oranges"/>
+                       <img src="{{ MEDIA_URL }}/images/oranges.jpg" alt="Oranges"/>
                     </div>
                     <div id="image-with-shadow" class="img-shadow">
-                       <img src="http://www.mjamesruggiero.com/media/images/sippy.jpg" alt="Sippy"/>
+                       <img src="{{ MEDIA_URL }}/images/sippy.jpg" alt="Sippy"/>
                     </div>
                     <div id="image-with-shadow" class="img-shadow">
-                       <img src="http://www.mjamesruggiero.com/media/images/tulips.jpg" alt="Tulips"/>
+                       <img src="{{ MEDIA_URL }}/images/tulips.jpg" alt="Tulips"/>
                     </div>
                 </div>
+                <p>&nbsp;</p>
                 {% block content %}
                 {% endblock %}
             </div>
             <div class="grid_4 omega" id="right_col">
-                <div id="navbars" class="colbox">
-                    <ul id="main-nav-entries">
-                        <li id="main-nav-entries">
-                            <a href="{% url coltrane_entry_archive_index %}">Entries</a>
-                        </li>
-                        <li id="main-nav-links">
-                            <a href="{% url coltrane_link_archive_index %}">Links</a>
-                        </li>
-                        <li id="main-nav-categories">
-                            <a href="{% url coltrane_category_list %}">Categories</a>
-                        </li>
-                        <li id="main-nav-tags">
-                            <a href="{% url coltrane_tag_list %}">Tags</a>
-                        </li>
-                    </ul>
-                </div>
                 <h2>Recent</h2>
                 {% block whatis %}
                 {% endblock %}
@@ -107,17 +92,6 @@
                       }
                     }).render().setUser('mjamesruggiero').start();
                     </script>
-                </div>
-                <h2>LastFM</h2>
-                <div id="lastfm_box" class="colbox">
-                    <a href="http://www.last.fm/user/mjamesruggiero/?chartstyle=bex">
-                        <img src="http://imagegen.last.fm/bex/recenttracks/mjamesruggiero.gif" border="0" alt="mjamesruggiero's Profile Page" />
-                    </a>
-                    <!--
-                    <a href="http://www.last.fm/user/mjamesruggiero/?chartstyle=basicrt10">
-                        <img src="http://imagegen.last.fm/basicrt10/recenttracks/mjamesruggiero.gif" border="0" alt="mjamesruggiero's Profile Page" />
-                    </a>
-                    -->
                 </div>
                 <div id="pony" class="colbox">
                     <a href="http://www.djangoproject.com/"><img src="http://media.djangoproject.com/img/badges/djangomade124x25_grey.gif" border="0" alt="Made with Django." title="Made with Django." /></a>

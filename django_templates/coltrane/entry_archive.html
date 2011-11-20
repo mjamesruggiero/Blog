@@ -4,7 +4,7 @@
 
 {% block content %}
 {% for entry in latest %}
-    <h3>{{ entry.title }}</h3>
+    <h3 class="entry-head">{{ entry.title }}</h3>
     {{ entry.body_html|safe }}
     <p class="about-this">{{ entry.pub_date|date:"F j, Y" }} :: <a href="{{ entry.get_absolute_url }}">Permalink</a></p>
 {% endfor %}
